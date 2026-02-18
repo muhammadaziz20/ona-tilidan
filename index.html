@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+video{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+    border-radius:14px;
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.7),
+        0 0 20px rgba(255,255,255,0.05);
+}
+
+@media (min-width:900px){
+    video{
+        max-width:900px;
+    }
+}
+
+@media (max-width:400px){
+    video{
+        border-radius:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<video id="myVideo" controls playsinline>
+    <source src="video.MOV" type="video/mp4">
+    Brauzeringiz video qo‘llab-quvvatlamaydi.
+</video>
+
+<script>
+const video = document.getElementById("myVideo");
+
+video.addEventListener("click", () => {
+    if(video.paused){
+        video.play();
+    } else {
+        video.pause();
+    }
+});
+</script>
+
+</body>
+</html>
